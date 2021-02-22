@@ -10,7 +10,8 @@ public class PlayerController : MonoBehaviour
     private Vector2 moveInput;
     private Animator animator;
     private bool playerMoving;
-    private Vector2 lastMove;
+    public Vector2 lastMove;
+    public string startPoint;
 
 
     void Start()

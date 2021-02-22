@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BuildingB.unity
     guid: 762e23f4783ed5544be664692ac1ad90
+  - enabled: 1
+    path: Assets/Scenes/LostAndFound.unity
+    guid: 63f6902390b4ce849a499a7afe64dc59
   m_configObjects: {}
