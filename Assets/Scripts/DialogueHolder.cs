@@ -8,8 +8,20 @@ public class DialogueHolder : MonoBehaviour
     private DialogueManager dialogueManager;
     private bool isColliding;
 
+    public string[] dialogueLines;
+
+    public string[] dialogueOptions;
+
+    private BinaryTree dialogueChain;
+
     void Start()
     {
+        // criar binary tree com arrays dialogueLines e dialogueOptions
+        dialogueChain = new BinaryTree(dialogueLines, dialogueOptions);
+
+        Debug.Log("Dialogue chain has been created");
+        Debug.Log("First dialogue line: " + dialogueChain.Root.Line);
+
         dialogueManager = FindObjectOfType<DialogueManager>();
     }
 
@@ -19,10 +31,11 @@ public class DialogueHolder : MonoBehaviour
         {
             if (!dialogueManager.dialogActive)
             {
-                // dMan.dialogueLines = dialogueLines;
-                // dMan.currentLine = 0;
-                // dMan.ShowDialogue();
-                dialogueManager.ShowBox(dialogue);
+                //dialogueManager.dialogueLines = dialogueLines; // passar binarytree em vez de array
+                dialogueManager.dialogueChain = dialogueChain;
+                //dialogueManager.currentLine = 0;
+                dialogueManager.currentNode = dialogueChain.Root;
+                dialogueManager.ShowBox();
             }
 
             // if (transform.parent.GetComponent<VillagerMovement>() != null)
