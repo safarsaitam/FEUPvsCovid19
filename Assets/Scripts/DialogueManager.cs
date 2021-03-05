@@ -13,6 +13,7 @@ public class DialogueManager : MonoBehaviour
     public Text OptionTwo;
 
     public Image pointer;
+    public Image enter;
 
     public bool dialogActive;
 
@@ -27,36 +28,33 @@ public class DialogueManager : MonoBehaviour
     void Start()
     {
         onOptionOne = true;
+        enter.enabled = false;
     }
 
     void Update()
     {
-        // if (dialogActive && Input.GetKeyDown(KeyCode.Return))
-        // {
-        //     dBox.SetActive(false);
-        //     dialogActive = false;
-        // }
 
-        if (dialogActive && (Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.LeftArrow)))
-        {
-            if (onOptionOne)
+        if (currentNode.RightNode != null)
+        {// there are more children nodes aka dialogue lines
+
+
+
+            if (dialogActive && (Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.LeftArrow)))
             {
-                pointer.rectTransform.anchoredPosition = new Vector2(5, pointer.rectTransform.anchoredPosition.y);
-                onOptionOne = false;
+                if (onOptionOne)
+                {
+                    pointer.rectTransform.anchoredPosition = new Vector2(5, pointer.rectTransform.anchoredPosition.y);
+                    onOptionOne = false;
+                }
+                else
+                {
+                    pointer.rectTransform.anchoredPosition = new Vector2(-46, pointer.rectTransform.anchoredPosition.y);
+                    onOptionOne = true;
+                }
             }
-            else
+
+            if (dialogActive && Input.GetKeyDown(KeyCode.Return))
             {
-                pointer.rectTransform.anchoredPosition = new Vector2(-46, pointer.rectTransform.anchoredPosition.y);
-                onOptionOne = true;
-            }
-        }
-
-        if (dialogActive && Input.GetKeyDown(KeyCode.Return))
-        {
-            //currentLine++;
-
-            if (currentNode.RightNode != null)
-            { // there are more children nodes aka dialogue lines
 
                 // if yes move to left node
                 // if no move to right node
@@ -68,11 +66,20 @@ public class DialogueManager : MonoBehaviour
                 {
                     currentNode = currentNode.RightNode;
                 }
+
             }
-            else
+
+        }
+        else
+        {
+            pointer.enabled = false;
+            enter.enabled = true;
+
+            if (dialogActive && Input.GetKeyDown(KeyCode.Return))
             {
                 dBox.SetActive(false);
                 dialogActive = false;
+
             }
 
         }
@@ -86,7 +93,6 @@ public class DialogueManager : MonoBehaviour
             // thePlayer.canMove = true;
         }*/
 
-        //dText.text = dialogueLines[currentLine];
         if (currentNode != null)
         {
             dText.text = currentNode.Line;
@@ -99,6 +105,5 @@ public class DialogueManager : MonoBehaviour
     {
         dialogActive = true;
         dBox.SetActive(true);
-        // dText.text = dialogue;
     }
 }

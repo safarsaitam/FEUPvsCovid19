@@ -35,6 +35,10 @@ public class BinaryTree
 
         
     }
+
+    /*public BinaryTree(string[] dialogueLines){
+
+    }*/
  
     /*public bool Add(int value)
     {
