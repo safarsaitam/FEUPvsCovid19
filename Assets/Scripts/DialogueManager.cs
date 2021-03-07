@@ -28,11 +28,13 @@ public class DialogueManager : MonoBehaviour
     void Start()
     {
         onOptionOne = true;
-        enter.enabled = false;
     }
 
     void Update()
     {
+
+        pointer.enabled = true;
+        enter.enabled = false;
 
         if (currentNode.RightNode != null)
         {// there are more children nodes aka dialogue lines
@@ -75,11 +77,10 @@ public class DialogueManager : MonoBehaviour
             pointer.enabled = false;
             enter.enabled = true;
 
-            if (dialogActive && Input.GetKeyDown(KeyCode.Return))
+            if (currentNode.LeftNode == null && dialogActive && Input.GetKeyDown(KeyCode.Return))
             {
                 dBox.SetActive(false);
                 dialogActive = false;
-
             }
 
         }

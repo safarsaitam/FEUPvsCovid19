@@ -8,6 +8,7 @@ public class BinaryTree
 
     public BinaryTree(string[] dialogueLines, string[] dialogueOptions){
 
+
         Node root = new Node();
         root.Line = dialogueLines[0];
         root.OptionOne = dialogueOptions[0];
