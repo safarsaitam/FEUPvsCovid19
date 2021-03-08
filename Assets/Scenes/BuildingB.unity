@@ -355,6 +355,62 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &455119192
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 455119193}
+  - component: {fileID: 455119194}
+  m_Layer: 5
+  m_Name: Quest Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &455119193
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 455119192}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.6375, y: 0.6375, z: 0.6375}
+  m_Children:
+  - {fileID: 863087132}
+  - {fileID: 1379850510}
+  m_Father: {fileID: 1388904597}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &455119194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 455119192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cefe121b3a879ed43a90166d12a0213c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quests:
+  - {fileID: 863087131}
+  - {fileID: 1379850511}
+  questCompleted: 
+  dialogue: {fileID: 0}
+  itemCollected: 
 --- !u!4 &572816631 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3510495404119275392, guid: 2b464b256c95aa345b53b912b9157d69,
@@ -4633,6 +4689,60 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &863087130
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 863087132}
+  - component: {fileID: 863087131}
+  m_Layer: 5
+  m_Name: Quest 0
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &863087131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 863087130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5eafe236dcd05847a3a55e835491ee0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  number: 0
+  manager: {fileID: 455119194}
+  startText: Find the Key!
+  endText: You found it!
+  isItemQuest: 1
+  item: Key
+--- !u!224 &863087132
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 863087130}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 455119193}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1088937858
 GameObject:
   m_ObjectHideFlags: 0
@@ -4664,6 +4774,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 265d99e0a65b3dd409543465aae05411, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  questNumber: 0
+  itemName: Key
 --- !u!58 &1088937860
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5137,12 +5249,12 @@ PrefabInstance:
     - target: {fileID: 2084288906613211405, guid: 80fea8ca3c5b1014694f0bf8d761e6f6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.207914
+      value: 7.207918
       objectReference: {fileID: 0}
     - target: {fileID: 2084288906613211405, guid: 80fea8ca3c5b1014694f0bf8d761e6f6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.035845995
+      value: 0.030074358
       objectReference: {fileID: 0}
     - target: {fileID: 2084288906613211405, guid: 80fea8ca3c5b1014694f0bf8d761e6f6,
         type: 3}
@@ -5509,6 +5621,60 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &1379850509
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1379850510}
+  - component: {fileID: 1379850511}
+  m_Layer: 5
+  m_Name: Quest 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1379850510
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1379850509}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 455119193}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1379850511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1379850509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5eafe236dcd05847a3a55e835491ee0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  number: 1
+  manager: {fileID: 455119194}
+  startText: 
+  endText: 
+  isItemQuest: 0
+  item: 
 --- !u!1001 &1388904596
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5693,6 +5859,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f76f77a4a4a4f154c9f998a0c1f0e08a, type: 3}
+--- !u!224 &1388904597 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8412349735678255505, guid: f76f77a4a4a4f154c9f998a0c1f0e08a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1388904596}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1604097503 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5504098678092880850, guid: f76f77a4a4a4f154c9f998a0c1f0e08a,
