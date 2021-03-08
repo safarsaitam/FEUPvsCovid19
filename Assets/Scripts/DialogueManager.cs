@@ -33,7 +33,7 @@ public class DialogueManager : MonoBehaviour
     void Update()
     {
 
-        /*pointer.enabled = true;
+        pointer.enabled = true;
         enter.enabled = false;
 
         if (currentNode.RightNode != null)
@@ -94,12 +94,12 @@ public class DialogueManager : MonoBehaviour
             // thePlayer.canMove = true;
         }*/
 
-        /*if (currentNode != null)
+        if (currentNode != null)
         {
             dText.text = currentNode.Line;
             OptionOne.text = currentNode.OptionOne;
             OptionTwo.text = currentNode.OptionTwo;
-        }*/
+        }
     }
 
     public void ShowBox()
