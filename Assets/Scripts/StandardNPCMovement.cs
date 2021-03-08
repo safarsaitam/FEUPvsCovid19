@@ -44,6 +44,9 @@ public class StandardNPCMovement : MonoBehaviour
 
     void Update()
     {
+        animator.SetFloat("MoveX", 0);
+        animator.SetFloat("MoveY", 0);
+
         if (isWalking)
         {
             walkCounter -= Time.deltaTime;
@@ -58,6 +61,7 @@ public class StandardNPCMovement : MonoBehaviour
                         waitCounter = waitTime;
                     }
                     animator.SetFloat("MoveY", 1);
+                    animator.SetFloat("LastMoveX", 0);
                     animator.SetFloat("LastMoveY", 1);
                     break;
                 case 1:
@@ -69,6 +73,7 @@ public class StandardNPCMovement : MonoBehaviour
                     }
                     animator.SetFloat("MoveX", 1);
                     animator.SetFloat("LastMoveX", 1);
+                    animator.SetFloat("LastMoveY", 0);
                     break;
                 case 2:
                     myRigidBody.velocity = new Vector2(0, -moveSpeed);
@@ -78,6 +83,7 @@ public class StandardNPCMovement : MonoBehaviour
                         waitCounter = waitTime;
                     }
                     animator.SetFloat("MoveY", -1);
+                    animator.SetFloat("LastMoveX", 0);
                     animator.SetFloat("LastMoveY", -1);
                     break;
                 case 3:
@@ -89,6 +95,7 @@ public class StandardNPCMovement : MonoBehaviour
                     }
                     animator.SetFloat("MoveX", -1);
                     animator.SetFloat("LastMoveX", -1);
+                    animator.SetFloat("LastMoveY", 0);
                     break;
                 default:
                     break;
@@ -140,6 +147,7 @@ public class StandardNPCMovement : MonoBehaviour
     public void chooseDirection()
     {
         walkDirection = Random.Range(0, 4);
+        Debug.Log("New direction is " + walkDirection);
         isWalking = true;
         walkCounter = walkTime;
     }

@@ -19,8 +19,8 @@ public class DialogueHolder : MonoBehaviour
         // criar binary tree com arrays dialogueLines e dialogueOptions
         dialogueChain = new BinaryTree(dialogueLines, dialogueOptions);
 
-        Debug.Log("Dialogue chain has been created");
-        Debug.Log("First dialogue line: " + dialogueChain.Root.Line);
+        // Debug.Log("Dialogue chain has been created");
+        // Debug.Log("First dialogue line: " + dialogueChain.Root.Line);
 
         dialogueManager = FindObjectOfType<DialogueManager>();
     }
