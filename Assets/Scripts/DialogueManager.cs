@@ -23,11 +23,12 @@ public class DialogueManager : MonoBehaviour
     public Node currentNode;
 
     private bool onOptionOne;
-
+    private PlayerController player;
 
     void Start()
     {
         onOptionOne = true;
+        player = FindObjectOfType<PlayerController>();
     }
 
     void Update()
@@ -81,6 +82,7 @@ public class DialogueManager : MonoBehaviour
             {
                 dBox.SetActive(false);
                 dialogActive = false;
+                player.canMove = true;
             }
 
         }

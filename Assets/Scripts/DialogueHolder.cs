@@ -33,7 +33,7 @@ public class DialogueHolder : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Space) && isColliding)
         {
 
-            //player.canMove = false;
+            player.canMove = false;
 
             if (!dialogueManager.dialogActive)
             {
@@ -44,9 +44,9 @@ public class DialogueHolder : MonoBehaviour
                 dialogueManager.ShowBox();
             }
 
-            // if (transform.parent.GetComponent<VillagerMovement>() != null)
+            // if (transform.parent.GetComponent<StandardNPCMovement>() != null)
             // {
-            //     transform.parent.GetComponent<VillagerMovement>().canMove = false;
+            //     transform.parent.GetComponent<StandardNPCMovement>().canMove = false;
             // }
         }
     }
