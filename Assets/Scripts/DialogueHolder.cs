@@ -6,7 +6,7 @@ public class DialogueHolder : MonoBehaviour
 {
     public string dialogue;
     private DialogueManager dialogueManager;
-    private bool isColliding;
+    public bool isColliding;
 
     public string[] dialogueLines;
 
