@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class QuestObject : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class QuestObject : MonoBehaviour
 
     public bool isItemQuest;
     public string item;
+    public Image icon;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +30,7 @@ public class QuestObject : MonoBehaviour
             {
                 manager.itemCollected = null;
                 EndQuest();
+                icon.enabled = false;
             }
         }
     }
