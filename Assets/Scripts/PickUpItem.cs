@@ -5,12 +5,16 @@ using UnityEngine;
 public class PickUpItem : MonoBehaviour
 
 {
+    public int questNumber;
+    private QuestManager manager;
+    public string itemName;
     private bool inRange;
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        manager = FindObjectOfType<QuestManager>();
     }
 
     // Update is called once per frame
@@ -19,6 +23,7 @@ public class PickUpItem : MonoBehaviour
         if(inRange && Input.GetKeyDown(KeyCode.E))
         {
             PickUp();
+            manager.itemCollected = itemName;
         }
     }
 
@@ -26,7 +31,10 @@ public class PickUpItem : MonoBehaviour
     {
         if (other.gameObject.name == "Player")
         {
-            inRange = true;
+            if (!manager.questCompleted[questNumber] && manager.quests[questNumber].gameObject.activeSelf)
+            {
+                inRange = true;
+            }
         }
     }
 

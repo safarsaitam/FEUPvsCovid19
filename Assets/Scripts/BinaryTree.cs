@@ -8,31 +8,33 @@ public class BinaryTree
 
     public BinaryTree(string[] dialogueLines, string[] dialogueOptions){
 
+        if (dialogueLines.Length > 0)
+        {
+            Node root = new Node();
+            root.Line = dialogueLines[0];
+            root.OptionOne = dialogueOptions[0];
+            root.OptionTwo = dialogueOptions[1];
 
-        Node root = new Node();
-        root.Line = dialogueLines[0];
-        root.OptionOne = dialogueOptions[0];
-        root.OptionTwo = dialogueOptions[1];
+            Node replyFirstYes = new Node();
+            replyFirstYes.Line = dialogueLines[1];
+            replyFirstYes.OptionOne = dialogueOptions[2];
+            replyFirstYes.OptionTwo = dialogueOptions[3];
 
-        Node replyFirstYes = new Node();
-        replyFirstYes.Line = dialogueLines[1];
-        replyFirstYes.OptionOne = dialogueOptions[2];
-        replyFirstYes.OptionTwo = dialogueOptions[3];
+            Node replyFirstNo = new Node();
+            replyFirstNo.Line = dialogueLines[2];
 
-        Node replyFirstNo = new Node();
-        replyFirstNo.Line = dialogueLines[2];
+            Node replySecondYes = new Node();
+            replySecondYes.Line = dialogueLines[3];
 
-        Node replySecondYes = new Node();
-        replySecondYes.Line = dialogueLines[3];
-        
-        Node replySecondNo = new Node();
-        replySecondNo.Line = dialogueLines[4];
+            Node replySecondNo = new Node();
+            replySecondNo.Line = dialogueLines[4];
 
-        replyFirstYes.LeftNode = replySecondYes;
-        replyFirstYes.RightNode = replySecondNo;
-        root.LeftNode = replyFirstYes;
-        root.RightNode = replyFirstNo;
-        Root = root;     
+            replyFirstYes.LeftNode = replySecondYes;
+            replyFirstYes.RightNode = replySecondNo;
+            root.LeftNode = replyFirstYes;
+            root.RightNode = replyFirstNo;
+            Root = root;
+        }
 
         
     }
