@@ -12,13 +12,14 @@ public class PlayerController : MonoBehaviour
     private bool playerMoving;
     public Vector2 lastMove;
     public string startPoint;
+    public bool canMove;
 
 
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-
+        canMove = true;
     }
 
 
@@ -26,21 +27,26 @@ public class PlayerController : MonoBehaviour
     {
         playerMoving = false;
 
-        moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
-
-        if (moveInput != Vector2.zero)
+        if (canMove)
         {
-            playerMoving = true;
-            rigidBody.velocity = new Vector2(moveInput.x * moveSpeed, moveInput.y * moveSpeed);
-            lastMove = moveInput;
-        } else {
-            rigidBody.velocity = Vector2.zero;
-        }
+            moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
 
-        animator.SetFloat("MoveX", Input.GetAxisRaw("Horizontal"));
-        animator.SetFloat("MoveY", Input.GetAxisRaw("Vertical"));
-        animator.SetBool("PlayerMoving", playerMoving);
-        animator.SetFloat("LastMoveX", lastMove.x);
-        animator.SetFloat("LastMoveY", lastMove.y);
+            if (moveInput != Vector2.zero)
+            {
+                playerMoving = true;
+                rigidBody.velocity = new Vector2(moveInput.x * moveSpeed, moveInput.y * moveSpeed);
+                lastMove = moveInput;
+            }
+            else
+            {
+                rigidBody.velocity = Vector2.zero;
+            }
+
+            animator.SetFloat("MoveX", Input.GetAxisRaw("Horizontal"));
+            animator.SetFloat("MoveY", Input.GetAxisRaw("Vertical"));
+            animator.SetBool("PlayerMoving", playerMoving);
+            animator.SetFloat("LastMoveX", lastMove.x);
+            animator.SetFloat("LastMoveY", lastMove.y);
+        }
     }
 }

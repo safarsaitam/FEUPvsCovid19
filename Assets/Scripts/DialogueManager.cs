@@ -36,7 +36,7 @@ public class DialogueManager : MonoBehaviour
         pointer.enabled = true;
         enter.enabled = false;
 
-        if (currentNode.RightNode != null)
+        if (currentNode != null && currentNode.RightNode != null)
         {// there are more children nodes aka dialogue lines
 
 
@@ -77,7 +77,7 @@ public class DialogueManager : MonoBehaviour
             pointer.enabled = false;
             enter.enabled = true;
 
-            if (currentNode.LeftNode == null && dialogActive && Input.GetKeyDown(KeyCode.Return))
+            if (currentNode != null && currentNode.LeftNode == null && dialogActive && Input.GetKeyDown(KeyCode.Return))
             {
                 dBox.SetActive(false);
                 dialogActive = false;

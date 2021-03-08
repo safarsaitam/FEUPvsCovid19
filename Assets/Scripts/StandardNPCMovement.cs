@@ -23,6 +23,8 @@ public class StandardNPCMovement : MonoBehaviour
     public Collider2D walkZone;
     private bool hasWalkZone;
 
+    
+
     void Start()
     {
         myRigidBody = GetComponent<Rigidbody2D>();

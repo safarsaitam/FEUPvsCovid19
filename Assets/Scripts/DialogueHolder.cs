@@ -14,6 +14,8 @@ public class DialogueHolder : MonoBehaviour
 
     private BinaryTree dialogueChain;
 
+    private PlayerController player;
+
     void Start()
     {
         // criar binary tree com arrays dialogueLines e dialogueOptions
@@ -23,12 +25,16 @@ public class DialogueHolder : MonoBehaviour
         // Debug.Log("First dialogue line: " + dialogueChain.Root.Line);
 
         dialogueManager = FindObjectOfType<DialogueManager>();
+        player = FindObjectOfType<PlayerController>();
     }
 
     void Update()
     {
         if (Input.GetKeyUp(KeyCode.Space) && isColliding)
         {
+
+            //player.canMove = false;
+
             if (!dialogueManager.dialogActive)
             {
                 //dialogueManager.dialogueLines = dialogueLines; // passar binarytree em vez de array
