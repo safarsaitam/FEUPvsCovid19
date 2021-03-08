@@ -217,11 +217,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd9d0facfdd429a458263438e6ab4d2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
+  moveSpeed: 1
   isWalking: 1
   walkTime: 5
-  waitTime: 1
+  waitTime: 3
   walkZone: {fileID: 795206909}
+  canMove: 0
 --- !u!95 &324150841
 Animator:
   serializedVersion: 3
@@ -4626,7 +4627,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 795206908}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.96, y: -4.91, z: -462.42188}
+  m_LocalPosition: {x: 9.04, y: -4.91, z: -462.42188}
   m_LocalScale: {x: 11.651249, y: 1.5501, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5635,10 +5636,35 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2354275676615822541, guid: f76f77a4a4a4f154c9f998a0c1f0e08a,
+        type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2354275676615822541, guid: f76f77a4a4a4f154c9f998a0c1f0e08a,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4480180860522433144, guid: f76f77a4a4a4f154c9f998a0c1f0e08a,
+        type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4480180860522433144, guid: f76f77a4a4a4f154c9f998a0c1f0e08a,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 8412349736486097795, guid: f76f77a4a4a4f154c9f998a0c1f0e08a,
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8412349736499299335, guid: f76f77a4a4a4f154c9f998a0c1f0e08a,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 8412349736752052339, guid: f76f77a4a4a4f154c9f998a0c1f0e08a,
         type: 3}
@@ -9538,16 +9564,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue: aaaaaaa
   dialogueLines:
-  - aaaaaaaa
-  - sssssssss
-  - ccccccccc
-  - ssssssss
-  - eeeeeeeeee
+  - Hello young man, how are you doing?
+  - I'm doing just fine, thank you for asking. Do you need help with something?
+  - What? No, I don't think so. I have to go, goodbye.
+  - Oh, what do we have here... Oh yes, I actually happen to carry a dead animal
+    with me for good luck. Will a bat do?
+  - Remember son, it is possible to make no mistakes and still lose. That is not
+    a weakness; that is life.
   dialogueOptions:
-  - ttttttttt
-  - dddddddd
-  - bbbbbbbbbb
-  - ggggggggggg
+  - Good, and you?
+  - Do you have any of these items?
+  - Do you have any of these items?
+  - How can I stop making mistakes?
 --- !u!61 &2099519993
 BoxCollider2D:
   m_ObjectHideFlags: 0
