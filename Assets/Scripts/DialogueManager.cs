@@ -25,6 +25,8 @@ public class DialogueManager : MonoBehaviour
     private bool onOptionOne;
     private PlayerController player;
 
+    public QuestTrigger questTrigger;
+
     void Start()
     {
         onOptionOne = true;
@@ -80,6 +82,11 @@ public class DialogueManager : MonoBehaviour
 
             if (currentNode != null && currentNode.LeftNode == null && dialogActive && Input.GetKeyDown(KeyCode.Return))
             {
+                Debug.Log("final dialogue");
+                if(questTrigger != null && dialogueChain.triggers(currentNode.Line, 3, dialogueChain)){
+                    Debug.Log("right choice");
+                    questTrigger.activateIcons();
+                }
                 dBox.SetActive(false);
                 dialogActive = false;
                 player.canMove = true;

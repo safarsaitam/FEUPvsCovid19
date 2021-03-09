@@ -16,6 +16,8 @@ public class DialogueHolder : MonoBehaviour
 
     private PlayerController player;
 
+    private QuestTrigger triggerQuest;
+
     void Start()
     {
         // criar binary tree com arrays dialogueLines e dialogueOptions
@@ -26,6 +28,8 @@ public class DialogueHolder : MonoBehaviour
 
         dialogueManager = FindObjectOfType<DialogueManager>();
         player = FindObjectOfType<PlayerController>();
+
+        triggerQuest = GetComponent<QuestTrigger>();
     }
 
     void Update()
@@ -39,6 +43,7 @@ public class DialogueHolder : MonoBehaviour
             {
                 //dialogueManager.dialogueLines = dialogueLines; // passar binarytree em vez de array
                 dialogueManager.dialogueChain = dialogueChain;
+                dialogueManager.questTrigger = triggerQuest;
                 //dialogueManager.currentLine = 0;
                 dialogueManager.currentNode = dialogueChain.Root;
                 dialogueManager.ShowBox();

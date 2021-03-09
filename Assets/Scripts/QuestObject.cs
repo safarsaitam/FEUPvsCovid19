@@ -13,7 +13,7 @@ public class QuestObject : MonoBehaviour
 
     public bool isItemQuest;
     public string item;
-    public Image icon;
+    public Image checkIcon;
 
     void Start()
     {
@@ -28,7 +28,7 @@ public class QuestObject : MonoBehaviour
             {
                 manager.itemCollected = null;
                 EndQuest();
-                icon.enabled = false;
+                checkIcon.enabled = true;
             }
         }
     }

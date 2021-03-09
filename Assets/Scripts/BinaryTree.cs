@@ -6,7 +6,11 @@ public class BinaryTree
 {
     public Node Root { get; set; }
 
+    private string[] lines;
+
     public BinaryTree(string[] dialogueLines, string[] dialogueOptions){
+
+        lines = dialogueLines;
 
         if (dialogueLines.Length > 0)
         {
@@ -37,6 +41,21 @@ public class BinaryTree
         }
 
         
+    }
+
+    public bool triggers(string line, int node, BinaryTree bt){
+        
+        for(int i = 0; i < lines.Length; i++){
+            if(lines[i] == line){
+                if(i == node){
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        }
+
+        return false;
     }
 
     /*public BinaryTree(string[] dialogueLines){

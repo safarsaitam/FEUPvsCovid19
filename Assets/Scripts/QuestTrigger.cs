@@ -8,6 +8,7 @@ public class QuestTrigger : MonoBehaviour
 
     public bool isColliding;
     public Image[] icons;
+    public Image[] checks;
 
     private static bool initialized;
 
@@ -19,6 +20,10 @@ public class QuestTrigger : MonoBehaviour
             {
                 icons[i].enabled = false;
             }
+            for (int i = 0; i < checks.Length; i++)
+            {
+                checks[i].enabled = false;
+            }
 
             initialized = true;
         }
@@ -26,14 +31,15 @@ public class QuestTrigger : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Space) && isColliding)
-        {
+        
+    }
 
-            Debug.Log("activating");
-            for (int i = 0; i < icons.Length; i++)
-            {
-                icons[i].enabled = true;
-            }
+    public void activateIcons()
+    {
+        Debug.Log("doing da thing");
+        for (int i = 0; i < icons.Length; i++)
+        {
+            icons[i].enabled = true;
         }
     }
 
