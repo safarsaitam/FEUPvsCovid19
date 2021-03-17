@@ -161,7 +161,7 @@ public class StandardNPCMovement : MonoBehaviour
     public void chooseDirection()
     {
         walkDirection = Random.Range(0, 4);
-        Debug.Log("New direction is " + walkDirection);
+        // Debug.Log("New direction is " + walkDirection);
         isWalking = true;
         walkCounter = walkTime;
     }

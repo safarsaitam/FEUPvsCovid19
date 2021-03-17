@@ -9,7 +9,7 @@ public class PickUpItem : MonoBehaviour
     private QuestManager manager;
     public string itemName;
     private bool inRange;
-    
+
 
     // Start is called before the first frame update
     void Start()
@@ -20,17 +20,20 @@ public class PickUpItem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(inRange && Input.GetKeyDown(KeyCode.E))
+        if (inRange && Input.GetKeyDown(KeyCode.E))
         {
             PickUp();
             manager.itemCollected = itemName;
         }
+        // Debug.Log("There are " + manager.questCompleted.Length + " and " + manager.quests.Length + " quests.");
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log("There are " + manager.questCompleted.Length + " and " + manager.quests.Length + " quests.");
         if (other.gameObject.name == "Player")
         {
+            Debug.Log(manager.quests[questNumber]);
             if (!manager.questCompleted[questNumber] && manager.quests[questNumber].gameObject.activeSelf)
             {
                 inRange = true;

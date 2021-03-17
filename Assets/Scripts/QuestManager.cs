@@ -11,17 +11,18 @@ public class QuestManager : MonoBehaviour
 
     public string itemCollected;
 
+
     // Start is called before the first frame update
     void Start()
     {
         dialogueManager = FindObjectOfType<DialogueManager>();
-        questCompleted = new bool[quests.Length];
+        // questCompleted = new bool[quests.Length];
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        //Debug.Log("Nr of quests: " + quests.Length + " & " + questCompleted.Length);
     }
 
     public void ShowQuestText(string questText)

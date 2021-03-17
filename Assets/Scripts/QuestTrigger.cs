@@ -36,7 +36,6 @@ public class QuestTrigger : MonoBehaviour
 
     public void activateIcons()
     {
-        Debug.Log("doing da thing");
         for (int i = 0; i < icons.Length; i++)
         {
             icons[i].enabled = true;
