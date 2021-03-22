@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PickUpItem : MonoBehaviour
 
@@ -23,7 +24,7 @@ public class PickUpItem : MonoBehaviour
         if (inRange && Input.GetKeyDown(KeyCode.E))
         {
             PickUp();
-            manager.itemCollected = itemName;
+            manager.AddItem(itemName);
         }
         // Debug.Log("There are " + manager.questCompleted.Length + " and " + manager.quests.Length + " quests.");
     }
@@ -34,7 +35,7 @@ public class PickUpItem : MonoBehaviour
         if (other.gameObject.name == "Player")
         {
             Debug.Log(manager.quests[questNumber]);
-            if (!manager.questCompleted[questNumber] && manager.quests[questNumber].gameObject.activeSelf)
+            if (!manager.questCompleted[questNumber] && manager.quests[questNumber].isActive == true)
             {
                 inRange = true;
             }

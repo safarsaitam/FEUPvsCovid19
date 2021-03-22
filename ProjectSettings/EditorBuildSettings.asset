@@ -10,10 +10,10 @@ EditorBuildSettings:
     guid: 4494a3f1749b80f4bb97f53e2bf5d69e
   - enabled: 1
     path: Assets/Scenes/Outside.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    guid: 8951e3a3bca972f43b88012a56b2972e
   - enabled: 1
     path: Assets/Scenes/BuildingB.unity
-    guid: 762e23f4783ed5544be664692ac1ad90
+    guid: bb41bbe979ae44448ab4a5c341451a61
   - enabled: 1
     path: Assets/Scenes/LostAndFound.unity
     guid: 63f6902390b4ce849a499a7afe64dc59

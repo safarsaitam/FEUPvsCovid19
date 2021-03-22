@@ -26,15 +26,16 @@ public class DialogueManager : MonoBehaviour
     private PlayerController player;
 
     public QuestTrigger questTrigger;
+    public QuestManager manager;
 
     void Start()
     {
         onOptionOne = true;
-        player = FindObjectOfType<PlayerController>();
     }
 
     void Update()
     {
+        player = FindObjectOfType<PlayerController>();
 
         pointer.enabled = true;
         enter.enabled = false;
@@ -82,14 +83,28 @@ public class DialogueManager : MonoBehaviour
 
             if (currentNode != null && currentNode.LeftNode == null && dialogActive && Input.GetKeyDown(KeyCode.Return))
             {
-                Debug.Log("final dialogue");
-                if(questTrigger != null && dialogueChain.triggers(currentNode.Line, 3, dialogueChain)){
-                    Debug.Log("right choice");
-                    questTrigger.activateIcons();
-                }
+
                 dBox.SetActive(false);
                 dialogActive = false;
                 player.canMove = true;
+
+                Debug.Log("final dialogue");
+                if (currentNode.Line == "Great! Without them I can't develop the cure against this damn virus... Here is the list. They're all somewhere here in the campus, but if you ever feel lost just ask someone for help...What are you waiting for, go!") {
+                    Debug.Log("right choice");
+                    questTrigger.activateIcons();
+                    manager.quests[0].StartQuest();
+                }
+
+                if(currentNode.Line == "Oh, what do we have here... Oh yes, I actually happen to carry a dead animal with me for good luck. Will a bat do?" && manager.quests[0].isActive == true)
+                {
+                    manager.AddItem("Animal");
+                }
+
+                if (currentNode.Line == "Oh yes. Here you go!" && manager.quests[0].isActive == true)
+                {
+                    manager.AddItem("Beaker"); 
+                }
+
             }
 
         }

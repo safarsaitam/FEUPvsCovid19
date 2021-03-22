@@ -42,6 +42,22 @@ public class QuestTrigger : MonoBehaviour
         }
     }
 
+    public void activateCheck(string item)
+    {
+        if(item == "Key")
+        {
+            checks[0].enabled = true;
+        }
+        else if (item == "Beaker")
+        {
+            checks[1].enabled = true;
+        }
+        else if (item == "Animal")
+        {
+            checks[2].enabled = true;
+        }
+    }
+
     void OnTriggerStay2D(Collider2D other)
     {
         if (other.gameObject.name == "Player")

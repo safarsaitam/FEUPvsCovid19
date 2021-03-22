@@ -13,7 +13,7 @@ public class CanvasManager : MonoBehaviour
         // if (!canvasExists)
         // {
         //     canvasExists = true;
-        //     DontDestroyOnLoad(transform.gameObject);
+             DontDestroyOnLoad(this.gameObject);
         // }
         // else
         // {

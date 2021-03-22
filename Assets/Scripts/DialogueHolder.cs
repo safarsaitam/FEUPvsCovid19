@@ -29,7 +29,7 @@ public class DialogueHolder : MonoBehaviour
         dialogueManager = FindObjectOfType<DialogueManager>();
         player = FindObjectOfType<PlayerController>();
 
-        triggerQuest = GetComponent<QuestTrigger>();
+        //triggerQuest = GetComponent<QuestTrigger>();
     }
 
     void Update()
@@ -43,7 +43,7 @@ public class DialogueHolder : MonoBehaviour
             {
                 //dialogueManager.dialogueLines = dialogueLines; // passar binarytree em vez de array
                 dialogueManager.dialogueChain = dialogueChain;
-                dialogueManager.questTrigger = triggerQuest;
+                //dialogueManager.questTrigger = triggerQuest;
                 //dialogueManager.currentLine = 0;
                 dialogueManager.currentNode = dialogueChain.Root;
                 dialogueManager.ShowBox();

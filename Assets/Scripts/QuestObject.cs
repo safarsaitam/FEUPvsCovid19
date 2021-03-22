@@ -12,29 +12,42 @@ public class QuestObject : MonoBehaviour
     public string endText;
 
     public bool isItemQuest;
-    public string item;
-    public Image checkIcon;
+    public List<string> items = new List<string>();
+    public bool isActive;
+
+    private int counter = 0;
 
     void Start()
     {
-        
+        items.Add("Key");
+        items.Add("Beaker");
+        items.Add("Animal");
     }
 
     void Update()
     {
-        if (isItemQuest)
+        if (isItemQuest && isActive)
         {
-            if(manager.itemCollected == item)
+            foreach (string item in items)
             {
-                manager.itemCollected = null;
+                if (!manager.itemCollected.Contains(item))
+                {
+                    counter++;
+                }
+            }
+
+            if (counter == 0)
+            {
                 EndQuest();
-                checkIcon.enabled = true;
             }
         }
+        counter = 0;
     }
 
     public void StartQuest()
     {
+        isActive = true;
+        gameObject.SetActive(true);
         manager.ShowQuestText(startText);
     }
 
@@ -42,6 +55,7 @@ public class QuestObject : MonoBehaviour
     {
         manager.ShowQuestText(endText);
         manager.questCompleted[number] = true;
+        isActive = false;
         gameObject.SetActive(false);
 
     }

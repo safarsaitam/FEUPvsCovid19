@@ -8,8 +8,9 @@ public class QuestManager : MonoBehaviour
     public QuestObject[] quests;
     public bool[] questCompleted;
     private DialogueManager dialogueManager;
+    public QuestTrigger questTrigger;
 
-    public string itemCollected;
+    public List<string> itemCollected = new List<string>();
 
 
     // Start is called before the first frame update
@@ -32,5 +33,11 @@ public class QuestManager : MonoBehaviour
         dialogueManager.currentNode = message;
         dialogueManager.ShowBox();
 
+    }
+
+    public void AddItem(string item)
+    {
+        itemCollected.Add(item);
+        questTrigger.activateCheck(item);
     }
 }
