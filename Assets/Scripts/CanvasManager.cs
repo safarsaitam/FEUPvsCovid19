@@ -9,16 +9,17 @@ public class CanvasManager : MonoBehaviour
 
     void Start()
     {
-        // Debug.Log("Canvas start");
-        // if (!canvasExists)
-        // {
-        //     canvasExists = true;
-             DontDestroyOnLoad(this.gameObject);
-        // }
-        // else
-        // {
-        //     Destroy(gameObject);
-        // }
+
+        int numCanvas = FindObjectsOfType<Canvas>().Length;
+        if (numCanvas > 1)
+        {
+            Destroy(this.gameObject);
+        }
+        
+        else
+        {
+            DontDestroyOnLoad(gameObject);
+        }
     }
 
     

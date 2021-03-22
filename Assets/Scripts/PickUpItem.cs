@@ -10,12 +10,17 @@ public class PickUpItem : MonoBehaviour
     private QuestManager manager;
     public string itemName;
     private bool inRange;
+    private bool pickedUp = false;
 
 
     // Start is called before the first frame update
     void Start()
     {
         manager = FindObjectOfType<QuestManager>();
+        if (manager.itemCollected.Contains("Key"))
+        {
+            gameObject.SetActive(false);
+        }
     }
 
     // Update is called once per frame
@@ -25,6 +30,12 @@ public class PickUpItem : MonoBehaviour
         {
             PickUp();
             manager.AddItem(itemName);
+            pickedUp = true;
+        }
+
+        if (pickedUp == true)
+        {
+            gameObject.SetActive(false);
         }
         // Debug.Log("There are " + manager.questCompleted.Length + " and " + manager.quests.Length + " quests.");
     }
