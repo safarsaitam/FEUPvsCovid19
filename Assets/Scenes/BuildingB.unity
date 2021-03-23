@@ -6806,7 +6806,7 @@ PrefabInstance:
     - target: {fileID: 2084288906613211405, guid: 80fea8ca3c5b1014694f0bf8d761e6f6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.03584504
+      value: 0.03584647
       objectReference: {fileID: 0}
     - target: {fileID: 2084288906613211405, guid: 80fea8ca3c5b1014694f0bf8d761e6f6,
         type: 3}
@@ -12942,6 +12942,18 @@ MonoBehaviour:
   - Want to talk to me again? I already gave what you needed son didn't I?
   - Right right, at my age you tend to forget things...
   - See you!
+  afterItemLines:
+  - You should see the animal collection I have at home. They are all so wonderful!
+    All dead of course... but wonderful.
+  - 'Death is a curious thing isn''t it? We all know that our time in this world
+    is limited, and that eventually all of us will end up underneath some sheet,
+    never to wake up. And yet it is always a surprise when it happens to someone
+    we know. '
+  - ' It''s like walking up the stairs to your bedroom in the dark, and thinking
+    there is one more stair than there is. Your foot falls down, through the air,
+    and there is a sickly moment of dark surprise as you try and readjust the way
+    you see things.'
+  item: Animal
 --- !u!61 &2099519993
 BoxCollider2D:
   m_ObjectHideFlags: 0

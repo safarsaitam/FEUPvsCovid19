@@ -16,9 +16,14 @@ public class DialogueHolder : MonoBehaviour
 
     public string[] postQuestLines;
 
+    public string[] afterItemLines;
+
     private BinaryTree dialogueChain;
     private BinaryTree preDialogueChain;
     private BinaryTree postDialogueChain;
+    private BinaryTree afterItemChain;
+
+    public string item;
 
     private PlayerController player;
 
@@ -32,6 +37,7 @@ public class DialogueHolder : MonoBehaviour
         dialogueChain = new BinaryTree(dialogueLines, dialogueOptions);
         preDialogueChain = new BinaryTree(preQuestLines, true);
         postDialogueChain = new BinaryTree(postQuestLines, false);
+        afterItemChain = new BinaryTree(afterItemLines, true);
 
 
         // Debug.Log("Dialogue chain has been created");
@@ -60,6 +66,7 @@ public class DialogueHolder : MonoBehaviour
 
                 if (preQuestLines.Length == 0)
                 {
+                    //researcher
 
                     if (questManager.questCompleted[0])
                     {
@@ -76,23 +83,35 @@ public class DialogueHolder : MonoBehaviour
                         dialogueManager.ShowBox();
                     }
 
-                }
+                } //others
                 else if (!questManager.quests[0].isActive && !questManager.questCompleted[0])
-                {
+                {//prequest
                     dialogueManager.dialogueChain = preDialogueChain;
 
                     dialogueManager.currentNode = preDialogueChain.Root;
                     dialogueManager.ShowBox();
                 }
                 else if (questManager.quests[0].isActive && !questManager.questCompleted[0])
-                {
-                    dialogueManager.dialogueChain = dialogueChain;
+                {//during quest
 
-                    dialogueManager.currentNode = dialogueChain.Root;
-                    dialogueManager.ShowBox();
+                    if (questManager.itemCollected.Contains(item))
+                    {//already gave out item
+                        dialogueManager.dialogueChain = afterItemChain;
+
+                        dialogueManager.currentNode = afterItemChain.Root;
+                        dialogueManager.ShowBox();
+                    }
+                    else
+                    {//hasnt given out item
+                        dialogueManager.dialogueChain = dialogueChain;
+
+                        dialogueManager.currentNode = dialogueChain.Root;
+                        dialogueManager.ShowBox();
+                    }
+
                 }
                 else if (!questManager.quests[0].isActive && questManager.questCompleted[0])
-                {
+                {//after quest
                     dialogueManager.dialogueChain = postDialogueChain;
 
                     dialogueManager.currentNode = postDialogueChain.Root;
