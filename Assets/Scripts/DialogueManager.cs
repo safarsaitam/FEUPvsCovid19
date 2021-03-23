@@ -28,9 +28,12 @@ public class DialogueManager : MonoBehaviour
     public QuestTrigger questTrigger;
     public QuestManager manager;
 
+    private bool lastMessage;
+
     void Start()
     {
         onOptionOne = true;
+        lastMessage = false;
     }
 
     void Update()
@@ -78,33 +81,39 @@ public class DialogueManager : MonoBehaviour
             pointer.enabled = false;
             enter.enabled = true;
 
-            if (currentNode != null && currentNode.LeftNode != null && dialogActive && Input.GetKeyUp(KeyCode.Return))
+            if (currentNode != null && currentNode.LeftNode != null && dialogActive && Input.GetKeyDown(KeyCode.Return))
             {
                 currentNode = currentNode.LeftNode;
             }
-            else if (currentNode != null && currentNode.LeftNode == null && dialogActive && Input.GetKeyUp(KeyCode.Return))
+            else if (currentNode != null && currentNode.LeftNode == null && dialogActive)
             {
-
-                dBox.SetActive(false);
-                dialogActive = false;
-                player.canMove = true;
-
-                if (currentNode.Line == "Great! Without them I can't develop the cure against this damn virus... Here is the list. They're all somewhere here in the campus, but if you ever feel lost just ask someone for help...What are you waiting for, go!")
+                if (Input.GetKeyDown(KeyCode.Return))
                 {
-                    Debug.Log("right choice");
-                    questTrigger.activateIcons();
-                    manager.quests[0].StartQuest();
+                    dBox.SetActive(false);
+                    dialogActive = false;
+                    player.canMove = true;
+
+                    if (currentNode.Line == "Great! Without them I can't develop the cure against this damn virus... Here is the list. They're all somewhere here in the campus, but if you ever feel lost just ask someone for help...What are you waiting for, go!")
+                    {
+                        Debug.Log("right choice");
+                        questTrigger.activateIcons();
+                        manager.quests[0].StartQuest();
+                    }
+
+                    if (currentNode.Line == "Oh, what do we have here... Oh yes, I actually happen to carry a dead animal with me for good luck. Will a bat do?" && manager.quests[0].isActive == true)
+                    {
+                        manager.AddItem("Animal");
+                    }
+
+                    if (currentNode.Line == "Oh yes. Here you go!" && manager.quests[0].isActive == true)
+                    {
+                        manager.AddItem("Beaker");
+                    }
                 }
 
-                if (currentNode.Line == "Oh, what do we have here... Oh yes, I actually happen to carry a dead animal with me for good luck. Will a bat do?" && manager.quests[0].isActive == true)
-                {
-                    manager.AddItem("Animal");
-                }
 
-                if (currentNode.Line == "Oh yes. Here you go!" && manager.quests[0].isActive == true)
-                {
-                    manager.AddItem("Beaker");
-                }
+
+
 
             }
 
