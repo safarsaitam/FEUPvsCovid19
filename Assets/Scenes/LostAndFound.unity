@@ -3054,7 +3054,7 @@ PrefabInstance:
     - target: {fileID: 2084288906613211405, guid: 80fea8ca3c5b1014694f0bf8d761e6f6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.046172142
+      value: -0.046173573
       objectReference: {fileID: 0}
     - target: {fileID: 2084288906613211405, guid: 80fea8ca3c5b1014694f0bf8d761e6f6,
         type: 3}
@@ -3160,6 +3160,11 @@ MonoBehaviour:
     works against the virus! '
   - He kept mentioning something about a young student who helped him... I am sure
     he or she must be really glad.
+  afterItemLines:
+  - Oh hi there again!
+  - I'm sorry but I don't think we have any more beakers...
+  - See you around!
+  item: Beaker
 --- !u!61 &914408644
 BoxCollider2D:
   m_ObjectHideFlags: 0
