@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     public void Play()
     {
-        SceneManager.LoadScene("Scenes/Outside");
+        SceneManager.LoadScene("Outside");
     }
 
     public void Quit()

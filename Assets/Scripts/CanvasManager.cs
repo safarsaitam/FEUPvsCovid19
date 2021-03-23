@@ -9,17 +9,7 @@ public class CanvasManager : MonoBehaviour
 
     void Start()
     {
-
-        int numCanvas = FindObjectsOfType<Canvas>().Length;
-        if (numCanvas > 1)
-        {
-            Destroy(this.gameObject);
-        }
-        
-        else
-        {
-            DontDestroyOnLoad(gameObject);
-        }
+        DontDestroyOnLoad(gameObject);
     }
 
     
