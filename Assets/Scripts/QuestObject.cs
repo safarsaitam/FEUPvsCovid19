@@ -19,9 +19,6 @@ public class QuestObject : MonoBehaviour
 
     void Start()
     {
-        items.Add("Key");
-        items.Add("Beaker");
-        items.Add("Animal");
     }
 
     void Update()

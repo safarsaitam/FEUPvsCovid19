@@ -24,6 +24,7 @@ public class DialogueHolder : MonoBehaviour
     private BinaryTree afterItemChain;
 
     public string item;
+    public int questNumber;
 
     private PlayerController player;
 
@@ -68,7 +69,7 @@ public class DialogueHolder : MonoBehaviour
                 {//researcher
 
 
-                    if (questManager.questCompleted[0])
+                    if (questManager.questCompleted[questNumber])
                     {//after quest
                         dialogueManager.dialogueChain = postDialogueChain;
 
@@ -77,7 +78,7 @@ public class DialogueHolder : MonoBehaviour
                     }
                     else
                     {
-                        if (!questManager.quests[0].isActive)
+                        if (!questManager.quests[questNumber].isActive)
                         {//during quest
                             dialogueManager.dialogueChain = dialogueChain;
 
@@ -93,14 +94,14 @@ public class DialogueHolder : MonoBehaviour
                     }
 
                 } //others
-                else if (!questManager.quests[0].isActive && !questManager.questCompleted[0])
+                else if (!questManager.quests[questNumber].isActive && !questManager.questCompleted[questNumber])
                 {//prequest
                     dialogueManager.dialogueChain = preDialogueChain;
 
                     dialogueManager.currentNode = preDialogueChain.Root;
                     dialogueManager.ShowBox();
                 }
-                else if (questManager.quests[0].isActive && !questManager.questCompleted[0])
+                else if (questManager.quests[questNumber].isActive && !questManager.questCompleted[questNumber])
                 {//during quest
 
                     if (questManager.itemCollected.Contains(item))
@@ -119,7 +120,7 @@ public class DialogueHolder : MonoBehaviour
                     }
 
                 }
-                else if (!questManager.quests[0].isActive && questManager.questCompleted[0])
+                else if (!questManager.quests[questNumber].isActive && questManager.questCompleted[questNumber])
                 {//after quest
                     dialogueManager.dialogueChain = postDialogueChain;
 

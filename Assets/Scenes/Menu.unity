@@ -1045,6 +1045,66 @@ PrefabInstance:
       propertyPath: questTrigger
       value: 
       objectReference: {fileID: 1655720765}
+    - target: {fileID: 3472100538901215320, guid: f76f77a4a4a4f154c9f998a0c1f0e08a,
+        type: 3}
+      propertyPath: endText
+      value: 'Quest Updated: Return to the girl.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3472100538901215320, guid: f76f77a4a4a4f154c9f998a0c1f0e08a,
+        type: 3}
+      propertyPath: startText
+      value: 'New Quest: Find the Dog!'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3472100538901215320, guid: f76f77a4a4a4f154c9f998a0c1f0e08a,
+        type: 3}
+      propertyPath: isItemQuest
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3472100538901215320, guid: f76f77a4a4a4f154c9f998a0c1f0e08a,
+        type: 3}
+      propertyPath: items.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3472100538901215320, guid: f76f77a4a4a4f154c9f998a0c1f0e08a,
+        type: 3}
+      propertyPath: items.Array.data[0]
+      value: Dog
+      objectReference: {fileID: 0}
+    - target: {fileID: 6882473513830794237, guid: f76f77a4a4a4f154c9f998a0c1f0e08a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8137181321091474161, guid: f76f77a4a4a4f154c9f998a0c1f0e08a,
+        type: 3}
+      propertyPath: endText
+      value: 'Quest Updated: You found all the items! Return to the researcher.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8137181321091474161, guid: f76f77a4a4a4f154c9f998a0c1f0e08a,
+        type: 3}
+      propertyPath: startText
+      value: 'New Quest: Find a key, a beaker with blue liquid and an animal.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8137181321091474161, guid: f76f77a4a4a4f154c9f998a0c1f0e08a,
+        type: 3}
+      propertyPath: items.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8137181321091474161, guid: f76f77a4a4a4f154c9f998a0c1f0e08a,
+        type: 3}
+      propertyPath: items.Array.data[0]
+      value: Key
+      objectReference: {fileID: 0}
+    - target: {fileID: 8137181321091474161, guid: f76f77a4a4a4f154c9f998a0c1f0e08a,
+        type: 3}
+      propertyPath: items.Array.data[1]
+      value: Beaker
+      objectReference: {fileID: 0}
+    - target: {fileID: 8137181321091474161, guid: f76f77a4a4a4f154c9f998a0c1f0e08a,
+        type: 3}
+      propertyPath: items.Array.data[2]
+      value: Animal
+      objectReference: {fileID: 0}
     - target: {fileID: 8209178859477766323, guid: f76f77a4a4a4f154c9f998a0c1f0e08a,
         type: 3}
       propertyPath: m_RootOrder

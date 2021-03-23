@@ -109,6 +109,16 @@ public class DialogueManager : MonoBehaviour
                     {
                         manager.AddItem("Beaker");
                     }
+
+                    if (currentNode.Line == "Thank you very much! He's a cute dog with brown fur and his name is Max.")
+                    {
+                        manager.quests[1].StartQuest();
+                    }
+
+                    if (currentNode.Line == "(Let's take him to his owner)" && manager.quests[1].isActive == true)
+                    {
+                        manager.AddItem("Dog");
+                    }
                 }
 
 
