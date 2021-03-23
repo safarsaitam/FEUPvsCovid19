@@ -38,9 +38,28 @@ public class BinaryTree
             root.LeftNode = replyFirstYes;
             root.RightNode = replyFirstNo;
             Root = root;
-        }
+        }        
+    }
 
+    public BinaryTree(string[] dialogueLines, bool preQuest){
         
+        lines = dialogueLines;
+
+        if (dialogueLines.Length > 0)
+        {
+            Node root = new Node();
+            root.Line = dialogueLines[0];
+
+            Node second = new Node();
+            second.Line = dialogueLines[1];
+
+            Node third = new Node();
+            third.Line = dialogueLines[2];
+
+            second.LeftNode = third;
+            root.LeftNode = second;
+            Root = root;
+        } 
     }
 
     public bool triggers(string line, int node, BinaryTree bt){

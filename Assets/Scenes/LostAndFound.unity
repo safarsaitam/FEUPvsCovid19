@@ -756,8 +756,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -2130096941
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -6314730185557706539, guid: d5fd2fa7de5c0ca40a74d2d694c290f7,
     type: 3}
@@ -781,7 +781,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.5, y: -1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 914408645}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3048,12 +3049,12 @@ PrefabInstance:
     - target: {fileID: 2084288906613211405, guid: 80fea8ca3c5b1014694f0bf8d761e6f6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.5253956
+      value: -2.5253851
       objectReference: {fileID: 0}
     - target: {fileID: 2084288906613211405, guid: 80fea8ca3c5b1014694f0bf8d761e6f6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.041207314
+      value: -0.046172142
       objectReference: {fileID: 0}
     - target: {fileID: 2084288906613211405, guid: 80fea8ca3c5b1014694f0bf8d761e6f6,
         type: 3}
@@ -3147,6 +3148,18 @@ MonoBehaviour:
   - No
   - Beaker with blue liquid
   - Happiness
+  preQuestLines:
+  - Hello, you are at the lost and found section of FEUP. If you have lost anything
+    then you have come to the right place.
+  - Unforntunately I am a bit busy at the moment. All this madness about COVID19
+    has really put a lot of weight on my shoulders.
+  - I hope you understand. But do come at a later time!
+  postQuestLines:
+  - Have you heard the news?
+  - 'Apparently a researcher here at FEUP has been able to develop a vaccine that
+    works against the virus! '
+  - He kept mentioning something about a young student who helped him... I am sure
+    he or she must be really glad.
 --- !u!61 &914408644
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3180,12 +3193,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 914408642}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.42, y: -3.57, z: -327.81992}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.07999992, y: -2.07, z: -327.81992}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_Father: {fileID: 170178074}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &992261481
 GameObject:
