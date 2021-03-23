@@ -711,7 +711,12 @@ MonoBehaviour:
   - Thanks to you, millions will be saved all around the world! There is still a
     lot of work ahead but this is a wonderful start.
   - Come by my office any time you wish to help me in the lab.
-  afterItemLines: []
+  afterItemLines:
+  - They say there is a key somewhere in the building's hall that opens a secret
+    door.
+  - But that's not all you can find at FEUP. There is a friend of mine with a weird
+    taste for dead animals that usually wanders around in the campus.
+  - 'However, always remember: there is a lost and found section.'
   item: 
 --- !u!61 &692457988
 BoxCollider2D:

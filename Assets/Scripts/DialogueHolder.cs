@@ -65,11 +65,11 @@ public class DialogueHolder : MonoBehaviour
                 //dialogueManager.currentLine = 0;
 
                 if (preQuestLines.Length == 0)
-                {
-                    //researcher
+                {//researcher
+
 
                     if (questManager.questCompleted[0])
-                    {
+                    {//after quest
                         dialogueManager.dialogueChain = postDialogueChain;
 
                         dialogueManager.currentNode = postDialogueChain.Root;
@@ -77,10 +77,19 @@ public class DialogueHolder : MonoBehaviour
                     }
                     else
                     {
-                        dialogueManager.dialogueChain = dialogueChain;
+                        if (!questManager.quests[0].isActive)
+                        {//during quest
+                            dialogueManager.dialogueChain = dialogueChain;
 
-                        dialogueManager.currentNode = dialogueChain.Root;
-                        dialogueManager.ShowBox();
+                            dialogueManager.currentNode = dialogueChain.Root;
+                            dialogueManager.ShowBox();
+                        } else {
+                            dialogueManager.dialogueChain = afterItemChain;
+
+                            dialogueManager.currentNode = afterItemChain.Root;
+                            dialogueManager.ShowBox();
+                        }
+
                     }
 
                 } //others
