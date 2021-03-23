@@ -119,6 +119,16 @@ public class DialogueManager : MonoBehaviour
                     {
                         manager.AddItem("Dog");
                     }
+
+                    if (currentNode.Line == "Come by my office any time you wish to help me in the lab." && manager.questCompleted[0] == true)
+                    {
+                        manager.ShowQuestText("Quest Completed: Congratulations!! You helped the researcher find a cure for Covid-19!");
+                    }
+
+                    if (currentNode.Line == "Woof! Woof!" && manager.questCompleted[1] == true)
+                    {
+                        manager.ShowQuestText("Quest Completed: Congratulations!! You helped the girl find her dog!");
+                    }
                 }
 
 

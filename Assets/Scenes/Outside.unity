@@ -1052,7 +1052,10 @@ MonoBehaviour:
   - Thank you so much! I'm so glad Max is fine.
   - C'mon Max thank him.
   - Woof! Woof!
-  afterItemLines: []
+  afterItemLines:
+  - I see you still haven't found him.
+  - 'Maybe if you shout "Max!" he''ll answer. '
+  - '*Sigh* (Where could that dog be?)'
   item: 
   questNumber: 1
 --- !u!61 &724300028
@@ -3058,7 +3061,7 @@ MonoBehaviour:
     else?
   isColliding: 0
   dialogueLines:
-  - Woof! Woof! (This is probably the dog that the girs was looking for. What was
+  - Woof! Woof! (This is probably the dog that the girl was looking for. What was
     his name?)
   - Woof! Woof! (He seems to like me.)
   - Grrrr! Bark! (I think I got the name wrong)
